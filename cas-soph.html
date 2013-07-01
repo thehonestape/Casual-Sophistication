@@ -1,0 +1,662 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>{Title}{block:SearchPage} | {SearchQuery}{/block:SearchPage}{block:PostSummary} | {PostSummary}{/block:PostSummary}</title>
+<link rel="shortcut icon" href="https://dl.dropboxusercontent.com/u/25741860/cas_soph/images/favicon.ico">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+
+<!--Facebook Open Graph Meta Info -->
+<meta property="og:site_name" content="Casual Sophistication"/>
+<meta property="og:title" content="Casual Sophistication"/>
+<meta property="og:description"content="Media Meanderings and Inspiration from The Honest Ape"/>
+<meta property="og:url" content="http://casualsophistication.org/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="https://dl.dropboxusercontent.com/u/25741860/cas_soph/images/cas-soph-thumb.jpg" />
+
+<!--Twitter Card Summary -->
+ <meta name="twitter:card" content="summary">
+ <!--wrong name, need to create casoph account, attributed to me for now -->
+ <meta name="twitter:site" content="@thehonestape"> 
+ <meta name="twitter:creator" content="@thehonestape">
+ <meta name="twitter:image:src" content="https://dl.dropboxusercontent.com/u/25741860/cas_soph/images/cas-soph-thumb.jpg">
+
+ {block:PermalinkPage}
+  <meta content="{Permalink}" name="twitter:url" />
+{/block:PermalinkPage}
+
+{block:PostSummary}
+  <meta content="{PostSummary}" name="twitter:title" />
+{/block:PostSummary}
+
+{block:Description}
+<meta content="{MetaDescription}" name="twitter:description" />
+{/block:Description}
+
+
+<meta name="image:Background" content="" />
+<meta name="image:Header" content="" />
+<meta name="color:Background" content="#FCFCFC" />
+<meta name="if:Infinite scroll" content="1" />
+<meta name="color:Post background" content="#FFFFFF" />
+<meta name="color:Post text" content="#000000" />
+<meta name="color:Header background" content="#a8d3e7" />
+<meta name="color:Header text" content="#FFFFFF" />
+<meta name="if:Show Description" content="1" />
+<meta name="text:Visitor counter script" content="" />
+<meta name="text:Music player script" content="" />
+<meta name="text:Description label" content="About" />
+<meta name="text:Loading message" content="Loading" />
+<meta name="text:Infinite scroll message" content="Loading more posts" />
+<meta name="if:Repeat background" content="1" />
+<meta name="if:Center background" content="1" />
+<meta name="if:Fixed background" content="0" />
+<meta name="if:Fixed header" content="1" />
+<meta name="if:Shadow under header" content="1" />
+<meta name="if:Large posts" content="1" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41834176-1', 'casualsophistication.org');
+  ga('send', 'pageview');
+
+</script>
+
+<script type="text/javascript" src="//use.typekit.net/wqn2ppo.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/vgjfkwm/hXcmolk5i/cas.js"></script>
+<script type="text/javascript">
+$(window).load(function(){  
+      $(".loading").hide();  
+})  
+$(document).ready(function() {
+    $('.menu_link').click(function () {
+		$('.menu_link').removeClass('selected');
+		$(this).addClass('selected');
+	});
+});
+</script>
+
+<!-- FB Like Button Script: If See and Not Used in a while, just erase this POS code. 
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=271140516272162";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+-->
+
+<!-- Beginning of CSS -->
+<style type="text/css">
+html,body {
+    margin: 0;
+	height: 100%;
+}
+body {
+	font-family: "news-gothic-std-1", Arial, Helvetica, sans-serif;
+}
+p, li, q, td, code {
+	font-size: 12px;
+}
+p {
+	margin: 10px 0;
+}
+p:last-child {
+	margin-bottom: 0;
+}
+h1, h2, h3, h4, h5, h6, p, li, q, td, code {
+	line-height: 160%;
+	color: inherit;
+}
+a img {
+	border: none;
+}
+a {
+	color: inherit;
+}
+blockquote {
+	margin: 0;
+	padding: 0 0 0 9px;
+	border-left: 3px {color:Post text} solid;
+}
+.header {
+	position: fixed;
+    top: 0;
+	left: 0;
+	width: 100%;
+	padding: 0 3%;
+	overflow: hidden;
+	z-index: 99;
+	background-color: #261E35;
+	-moz-box-shadow:    0px 1px 3px  rgba(38,30,53, .6);
+	-webkit-box-shadow: 0px 1px 3px  rgba(38,30,53, .6);
+	box-shadow:         0px 1px 3px  rgba(38,30,53, .6);
+}
+.header * {
+	color: {color:Header text};
+}
+.header a {
+	text-decoration: none;
+}
+.header img {
+	max-height: 30px;
+}
+.header .item {
+	float: left;
+	line-height: 100%;
+	text-transform: uppercase;
+	text-shadow: 0px 1px 2px rgba(0,0,0,0.1);
+	filter: dropshadow(color=rgba(0,0,0,0.1), offx=0, offy=1);
+}
+.header .menu_link {
+	cursor: pointer;
+	margin: 12px 2px;
+	font-size: 11px;
+	padding: 6px 13px;
+	font-weight: bold;
+	-webkit-transition: all 0.1s ease;
+	-moz-transition: all 0.1s ease;
+	-o-transition: all 0.1s ease;
+	transition: all 0.1s ease;
+}
+
+.header .social_link {
+}
+.header .menu_link:hover,.header .selected {
+	color: #ccc;
+	text-shadow: 0px 1px 2px rgba(0,0,0,0.1);
+}
+.header .item h1 {
+	margin: 0;
+	/*need to fix the alignment...but this negative margin works for now */
+	margin-top: -2px;
+	font-size: 30px;
+	width:320px;
+	height: 38px;
+	text-indent: -800px;
+	font-family: "tablet-gothic-compressed-1",Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	line-height: 110%;
+	background-image: url('https://dl.dropboxusercontent.com/u/25741860/cas_soph/images/casual_sophistication.svg'); 
+}
+.header .title {
+	margin: 8px 30px 0 0;
+}
+.header .search {
+	float: right;
+    margin: 10px 120px 10px 10px;
+	font-size: 13px;
+	padding: 0 13px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background-color: #fff;
+}
+
+.header .search:focus {
+	-moz-box-shadow: inset 1px 1px 3px 1px #ccc;
+	-webkit-box-shadow: inset 1px 1px 3px 1px #ccc;
+	box-shadow: inset 1px 1px 3px 1px #ccc;
+}
+
+.header .search input {
+	color: #666;
+	background: transparent;
+	border: 0px;
+	text-shadow: 0px -1px 2px rgba(0,0,0,0.1);
+	filter: dropshadow(color=rgba(0,0,0,0.1), offx=0, offy=-1);
+	margin-left: 5px;
+	outline: none;
+	width: 75px;
+	height: 23px;
+	-webkit-transition: all 0.25s ease;
+	-moz-transition: all 0.25s ease;
+	-o-transition: all 0.25s ease;
+	transition: all 0.25s ease
+}
+.header .search:hover input {
+	width: 100px;
+}
+.header .slide_downs {
+	padding: 25px 0;
+	border-top: 1px solid rgba(0,0,20, 1);
+	width: 100%;
+	float: left;
+	font-size: 12px;
+	line-height: 160%;
+}
+.posts {
+	position: relative;
+	padding-bottom: 100px;
+	{block:IndexPage}
+	width: 100%;
+	margin: {block:IfFixedHeader}75{/block:IfFixedHeader}{block:IfNotFixedHeader}25{/block:IfNotFixedHeader}px 3% 25px 3%;
+	{/block:IndexPage}
+	{block:PermalinkPage}
+	width: 940px;
+	margin: {block:IfFixedHeader}125{/block:IfFixedHeader}{block:IfNotFixedHeader}25{/block:IfNotFixedHeader}px auto 25px auto;
+	{/block:PermalinkPage}
+
+}
+.post {
+	float: left;
+	position: relative;
+	-webkit-transition: padding .25s ease !important;
+	-moz-transition: padding .25s ease !important;
+	-ms-transition: padding .25s ease !important;
+	-o-transition: padding .25s ease !important;
+	transition: padding .5s ease !important;
+	{block:IndexPage}
+	margin: 5px;
+	{block:IfLargePosts}
+	width: 400px;
+	{/block:IfLargePosts}
+	{block:IfNotLargePosts}
+	width: 250px;
+	{/block:IfNotLargePosts}
+	{/block:IndexPage}
+	{block:PermalinkPage}
+	margin: 10px;
+	width: 500px;
+	padding-top: 30px;
+	{/block:PermalinkPage}
+	
+}
+
+.post:hover {
+	border-radius: 3px;
+	padding-top: 30px;
+	-moz-box-shadow:    1px 1px 3px 1px #ccc;
+	-webkit-box-shadow: 1px 1px 3px 1px #ccc;
+	box-shadow:         1px 1px 3px 1px #ccc;
+	-webkit-transition: all .5s ease !important;
+	-moz-transition: all .5s ease !important;
+	-ms-transition: all .5s ease !important;
+	-o-transition: all .5s ease !important;
+	transition: all .5s ease !important;
+	z-index: 1;
+}
+
+.note_box {
+	float: left;
+	position: relative;
+	margin: 10px;
+	width: 400px
+}
+.inner {
+	padding: 15px;
+	margin: 0;
+	background: {color:Post background};
+	color: {color:Post text};
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-topright: 0px;
+	-moz-border-radius-bottomright: 2px;
+	-moz-border-radius-bottomleft: 2px;
+	-webkit-border-radius: 0px 0px 2px 2px;
+	border-radius: 0px 0px 2px 2px;
+}
+.inner:first-child {
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+.post h2 {
+	margin: 0;
+	font-size: 13px;
+	line-height: 19px;
+	text-transform: uppercase;
+}
+.post ol, .post ul {
+	margin: 3px 0;
+	padding: 0;
+}
+.post li {
+	margin: 2px 35px;
+}
+.post .info_bar {
+	background-color: rgba(38,30,53, 1);
+	width: 100%;
+	height: 30px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	text-align: right;
+	opacity: 0;
+	color: white;
+	border-radius: 5px 5px 0px 0px;
+	-webkit-transition: all 0.25s ease;
+	-moz-transition: all 0.25s ease;
+	-o-transition: all 0.25s ease;
+	transition: all 0.25s ease;
+	{block:PermalinkPage}
+	opacity: 1;
+	{/block:PermalinkPage}
+}
+
+.post .info_bar .social_links li {
+	background-color: none;
+}
+
+.post .info_bar ul {
+	list-style: none;
+}
+
+.post .info_bar ul li {
+	display: block;
+	color: white;
+	text-decoration: none;
+	background-color: rgba(38,30,53, .8);
+	padding: 3px 5px 3px 5px;
+	margin: 0 auto;
+	text-align: center;
+	float: left;
+}
+
+.post .info_bar ul li:hover {
+	background-color: rgba(38,30,53, 1);
+	-webkit-box-shadow: inset 0px 2px 10px 0px rgba(0, 0, 0, 1);
+	box-shadow: inset 0px 2px 10px 0px rgba(0, 0, 0, 1);
+}
+
+
+.post .info_bar ul li a {
+	text-decoration: none;
+
+}
+
+.post .info_bar ul li:not(:last-child) {
+	border-right: 1px solid rgba(38,30,53, .7);
+
+}
+.post .info_bar ul li:first-child {
+	border-radius: 5px 0px 0px 5px;
+}
+
+.post .info_bar ul li:last-child {
+	border-radius: 0px 5px 5px 0px;
+	margin-right: 5px;
+}
+.post:hover .info_bar {
+	opacity: 1;
+
+}
+
+.post .info_bar img {
+	margin: 0 3px -6px 0;
+}
+.post .info_bar .notecount {
+	background-color: rgba(38,30,53, .8);
+	text-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+	filter: dropshadow(color=rgba(0,0,0,0.5), offx=0, offy=1);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding: 5px;
+	font-size: 12px;
+	font-weight: bold;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+
+}
+.post .info_bar .notecount span {
+	color: #FFF;
+}
+.post .photo {
+	position: relative;
+	padding: 0;
+	line-height: 0 !important;
+	{block:IndexPage}
+	background: {color:Body text};
+	{/block:IndexPage}
+}
+.post img.main_photo {
+	width: 100%;
+}
+.post img {
+	max-width: 100%;
+	height: auto;
+}
+.post .photo img {
+	line-height: 0;
+}
+.post .lines {
+	margin: 0 0 5px 0;
+	padding: 0;
+	list-style: none;
+}
+.post .lines .line {
+	padding: 5px 10px;
+	margin: 0;
+}
+.post .lines .odd {
+}
+.post .lines .even {
+	margin-left: 25px;
+}
+.note_box ol.notes {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	font-size: 11px;
+}
+.note_box ol.notes a {
+	text-decoration: none;
+}
+.note_box ol.notes li.note {
+	border-top: solid 1px {color:Post text};
+	padding: 5px 0;
+	margin: 0 !important;
+}
+.note_box ol.notes li.note img.avatar {
+	vertical-align: -4px;
+	margin-right: 10px;
+	width: 16px;
+	height: 16px;
+}
+.note_box ol.notes li.note .answer_content {
+	font-weight: normal;
+}
+.note_box ol.notes li.note blockquote {
+	border-color: {color:Post text};
+	padding: 4px 10px;
+	margin: 10px 0px 0px 25px;
+}
+.pagination {
+	display: none;
+}
+#infscr-loading {font-weight:bold;width:100%;text-align:center;position:absolute;padding:25px 0;bottom:0;left:0;font-size:10px;color:{color:Header background};text-transform:uppercase;}
+.masonry,.masonry .masonry-brick {-webkit-transition-duration: 0.25s;-moz-transition-duration: 0.25s;-o-transition-duration: 0.25s;transition-duration: 0.25s;}.masonry {-webkit-transition-property: height, width;-moz-transition-property: height, width;-o-transition-property: height, width;transition-property: height, width;}.masonry .masonry-brick {-webkit-transition-property: left, right, top;-moz-transition-property: left, right, top;-o-transition-property: left, right, top;transition-property: left, right, top;}
+body{background:url({image:Background}) {color:Background} {block:IfFixedBackground}fixed{/block:IfFixedBackground} {block:IfNotRepeatBackground}no-repeat{/block:IfNotRepeatBackground} {block:IfCenterBackground}center 0{/block:IfCenterBackground}}
+.hidden {
+	display: none;
+}
+.loading {
+	font-weight: bold;
+	text-align: center;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	font-size: 10px;
+	color: {color:Header background};
+	text-transform: uppercase;
+}
+{CustomCSS}
+.spotify_audio_player {height:380px !important;
+}
+
+.my-like {
+	font-family: FontAwesome;
+	text-decoration: none;
+	cursor:pointer;
+    display:inline;
+    margin: 0 auto;
+	text-align: center;
+}
+.my-liked, .my-like:hover {
+	font-family: FontAwesome;
+    text-decoration: none;
+	cursor:pointer;
+    display:inline;
+    margin: 0 auto;
+	text-align: center;
+}
+
+.my-liked {
+	 color: rgba(237, 74, 75, 1);
+
+}
+</style>
+
+</head>
+
+<body class="{Name}">
+	<div class="loading">
+    	<table width="100%" height="100%">
+        	<tr>
+            	<td width="100%" height="100%">
+                	{text:Loading message}
+                </td>
+			</tr>
+		</table>
+    </div>
+
+	{block:Pagination}<ul class="pagination hidden">
+        	<li>{block:NextPage}<a href="{NextPage}" class="pagination_nextlink">Next</a>{/block:NextPage}</li>
+    </ul>{/block:Pagination}
+
+    <div class="header">
+    
+    	<a href="/"><div class="item title">{block:IfHeaderImage}<img src="{image:Header}" />{/block:IfHeaderImage}{block:IfNotHeaderImage}<h1>{Title}</h1>{/block:IfNotHeaderImage}</div></a>
+
+    	{block:HasPages}{block:Pages}<a href="{URL}"><div class="item menu_link">{Label}</div></a>
+
+    	{/block:Pages}{/block:HasPages}{block:IfShowDescription}{block:Description}<div class="item menu_link" onclick="$('.description').slideToggle()">{text:Description label}</div>
+
+    	{/block:Description}{/block:IfShowDescription}
+        
+        {block:AskEnabled}<div class="item menu_link" onclick="$('.askbox').slideToggle()">{AskLabel}</div>{/block:AskEnabled}
+
+        {block:SubmitEnabled}<div class="item menu_link" onclick="$('.submitbox').slideToggle()">{SubmitLabel}</div>{/block:SubmitEnabled}<!--<a href="/archive"><div class="item menu_link">{lang:Archive}</div></a>-->
+
+        <a href="{RSS}"><div class="item menu_link">{lang:RSS}</div></a>{block:IfVisitorCounterScript}<div class="item menu_link">{text:Visitor counter script}</div>{/block:IfVisitorCounterScript}{block:IfNotInfiniteScroll}{block:Pagination}{block:PreviousPage}<a href="{PreviousPage}"><div class="item menu_link">{lang:Previous page}</div></a>{/block:PreviousPage}{block:NextPage}<a href="{NextPage}"><div class="item menu_link">{lang:Next page}</div></a>{/block:NextPage}{/block:Pagination}{/block:IfNotInfiniteScroll}<div class="item search"><form action="/search" method="get"><input type="text" name="q" placeholder="search" value="{SearchQuery}" /></form></div><a href="https://www.facebook.com/CasualSophistication/" target="_blank"><div class="item menu_link"><i class="icon-facebook-sign icon-large"></i></div></a><a href="https://twitter.com/TheHonestApe" target="_blank"><div class="item menu_link"><i class="icon-twitter-sign icon-large"></i></div></a><a href="https://soundcloud.com/casualsophistication/" target="_blank"><div class="item menu_link"><i class="icon-cloud icon-large"></i></div></a>
+    
+    	{block:IfShowDescription}{block:Description}<div class="slide_downs description hidden">
+        	{Description}
+        </div>{/block:Description}{/block:IfShowDescription}
+        {block:AskEnabled}<div class="slide_downs askbox hidden">
+           	 <iframe frameborder="0" scrolling="no" width="100%" height="149" src="http://www.tumblr.com/ask_form/{Name}.tumblr.com" style="background-color:transparent; overflow:hidden;" id="ask_form"></iframe><!--[if IE]><script type="text/javascript">document.getElementById('ask_form').allowTransparency=true;</script><![endif]-->
+        </div>{/block:AskEnabled}
+        {block:SubmitEnabled}<div class="slide_downs submitbox hidden">
+           	 <iframe frameborder="0" scrolling="no" width="100%" height="500" id="submit_form" src="http://www.tumblr.com/submit_form/{Name}.tumblr.com" style="background-color:transparent; overflow:hidden;"></iframe><!--[if IE]><script type="text/javascript">document.getElementById('submit_form').allowTransparency=true;</script><![endif]-->
+        </div>{/block:SubmitEnabled}
+    
+    </div>
+
+    <div class="posts">    
+    	{block:Posts}
+        <div class="post {block:IfInfiniteScroll}load{/block:IfInfiniteScroll}" id="post_{PostID}" {block:Date}no_{/block:Date}style="width:100%;">
+
+        {block:Text}<div class="inner">{block:Title}<h2>{Title}</h2>{/block:Title}{Body}{block:More}<h3><a href="{Permalink}">{lang:Read more}</a></h3>{/block:More}</div>{/block:Text}
+
+        {block:Answer}<div class="inner"><p><strong>{lang:Asker asked}: {Question}</strong></p><p>{Answer}</p></div>{/block:Answer}
+
+        {block:Chat}<div class="inner">{block:Title}<h2>{Title}</h2>{/block:Title}<ul class="lines">{block:Lines}<li class="line {Alt}">{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</li>{/block:Lines}</ul></div>{/block:Chat}
+
+        {block:Quote}<div class="inner"><h2 class="quote">"{Quote}"</h2>{block:Source}<p>- {Source}</p>{/block:Source}</div>{/block:Quote}
+
+        {block:Link}<div class="inner"><h2><a href="{URL}" {Target}>{Name}</a></h2>{block:Description}{Description}{/block:Description}</div>{/block:Link}
+
+        {block:Photo}<div class="photo">{LinkOpenTag}<img src="{block:IndexPage}{block:IfLargePosts}{PhotoURL-400}{/block:IfLargePosts}{block:IfNotLargePosts}{PhotoURL-250}{/block:IfNotLargePosts}{/block:IndexPage}{block:PermalinkPage}{PhotoURL-500}{/block:PermalinkPage}" alt="{PhotoAlt}" class="main_photo" />{LinkCloseTag}</div>{block:PermalinkPage}{block:Caption}<div class="inner">{Caption}</div>{/block:Caption}{/block:PermalinkPage}{/block:Photo}
+
+        {block:Photoset}{block:IndexPage}{block:IfLargePosts}{Photoset-400}{/block:IfLargePosts}{block:IfNotLargePosts}{Photoset-250}{/block:IfNotLargePosts}{/block:IndexPage}{block:PermalinkPage}{Photoset-500}{/block:PermalinkPage}{block:Caption}<div class="inner">{Caption}</div>{/block:Caption}{/block:Photoset}
+
+        {block:Video}{block:IndexPage}{block:IfLargePosts}{Video-400}{/block:IfLargePosts}{block:IfNotLargePosts}{Video-250}{/block:IfNotLargePosts}{/block:IndexPage}{block:PermalinkPage}{Video-500}{/block:PermalinkPage}{block:Caption}<div class="inner">{Caption}</div>{/block:Caption}{/block:Video}{block:Audio}{block:AlbumArt}<img src="{AlbumArtURL}" class="main_photo" />{/block:AlbumArt}<div class="inner">{AudioPlayerWhite}{block:Caption}{Caption}{/block:Caption}</div>{/block:Audio}
+        
+        	{block:Date}<div class="info_bar">
+        	<ul>
+
+        	<li><div class="my-like icon-" data-reblog="{ReblogURL}" data-id="{PostID}" title="Like"></div></li>
+
+        	<li><a href="{ReblogURL}" title="Reblog this photo"><i class="icon-exchange reblog"></i></a></li>
+
+        	<li><a href="{Permalink}" title="Original Post"><i class="icon-link"></i></a></li>
+
+        	<li><a href="http://www.facebook.com/share.php?u={Permalink}"><i class="icon-facebook-sign"></i></a></li>
+
+        	<li><a href="http://twitter.com/home?status={Permalink}"><i class="icon-twitter"></i></a>
+
+        	<li><a href="http://pinterest.com/pin/create/button/?url={URLEncodedPermalink}&media={URLEncodedPhotoURL-500}" class="pin-it-button" count-layout="horizontal"><i class="icon-pinterest"></i></a></li>
+
+
+        	</ul>
+
+        	{block:NoteCount}<a href="{Permalink}" class="notecount"><span class="note_count_{PostID}">{NoteCount}</span></a>{/block:NoteCount}</div>{/block:Date}
+        </div>
+        
+        
+        {block:PostNotes}<div class="note_box">
+        	<div class="inner">
+        		{PostNotes}
+            </div>
+        </div>{/block:PostNotes}
+        
+        
+        {/block:Posts}
+    
+    </div>
+    
+    {text:Music player script}
+    
+{block:IndexPage}
+<script type="text/javascript">
+$(function(){var $container = $('.posts').css({ opacity: 0 });$container.imagesLoaded(function(){$container.animate({ opacity: 1 });$container.masonry({itemSelector:'.post',columnWidth: {block:IfLargePosts}410{/block:IfLargePosts}{block:IfNotLargePosts}260{/block:IfNotLargePosts}});});$container.infinitescroll({navSelector:'.pagination',nextSelector:'.pagination li a.pagination_nextlink',itemSelector: '.load',loading: {img:'http://static.tumblr.com/jw8fmba/yGMlx5zw8/transparent.gif',msgText : "{text:Infinite scroll message}",donetext:''}},function( newElements ) { var $newElems = $( newElements ).css({ opacity: 0 });$newElems.imagesLoaded(function(){$newElems.animate({ opacity: 1 });$container.masonry( 'appended', $newElems, true );});});});
+</script>
+
+<!--FB Share Code 
+<script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/en_US/all.js#xfbml=1"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script> -->
+
+<!--Twitter Share Code 
+<script type=”text/javascript” src=”http://platform.twitter.com/widgets.js”></script>
+-->
+
+<!--Custom Tumblr Like Button -->
+<script>
+window.onload = function () {
+document.body.insertAdjacentHTML( 'beforeEnd', '<iframe id="my-like-frame" style="display:none;"></iframe>' );
+document.addEventListener( 'click', function ( event ) {
+    var myLike = event.target;
+    if( myLike.className.indexOf( 'my-like' ) > -1 ) {
+        var frame = document.getElementById( 'my-like-frame' ),
+            liked = ( myLike.className == 'my-liked' ),
+            command = liked ? 'unlike' : 'like',
+            reblog = myLike.getAttribute( 'data-reblog' ),
+            id = myLike.getAttribute( 'data-id' ),
+            oauth = reblog.slice( -8 );
+        frame.src = 'http://www.tumblr.com/' + command + '/' + oauth + '?id=' + id;
+        liked ? myLike.className = 'my-like' : myLike.className = 'my-liked';
+    };
+}, false );
+};
+</script>
+
+{/block:IndexPage}
+<iframe id="likes_frame" style="height:1px;width:1px;position:absolute;left:-500px;"></iframe>
+</body>
+</html>
