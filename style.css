@@ -28,14 +28,7 @@ a {
 blockquote {
 	margin: 0;
 	padding: 0 0 0 9px;
-	border-left: 3px {color:Post text} solid;
-}
-.header {
-    top: 0;
-	left: 0;
-	width: 100%;
-	padding: 0 3%;
-	overflow: hidden;
+	border-left: 3px 	overflow: hidden;
 	z-index: 99;
 	background-color: #261E35;
 	-moz-box-shadow:    1px 1px 3px  #ccc;
