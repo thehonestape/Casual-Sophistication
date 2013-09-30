@@ -1,4 +1,3 @@
-<style type="text/css">
 html,body {
     margin: 0;
 	height: 100%;
@@ -28,12 +27,20 @@ a {
 blockquote {
 	margin: 0;
 	padding: 0 0 0 9px;
-	border-left: 3px 	overflow: hidden;
+	border-left: 3px {color:Post text} solid;
+}
+.header {
+	position: fixed;
+    top: 0;
+	left: 0;
+	width: 100%;
+	padding: 0 3%;
+	overflow: hidden;
 	z-index: 99;
 	background-color: #261E35;
-	-moz-box-shadow:    1px 1px 3px  #ccc;
-	-webkit-box-shadow: 1px 1px 3px  #ccc;
-	box-shadow:         1px 1px 3px  #ccc;
+	-moz-box-shadow:    0px 1px 3px  rgba(38,30,53, .6);
+	-webkit-box-shadow: 0px 1px 3px  rgba(38,30,53, .6);
+	box-shadow:         0px 1px 3px  rgba(38,30,53, .6);
 }
 .header * {
 	color: {color:Header text};
@@ -80,7 +87,7 @@ blockquote {
 	font-family: "tablet-gothic-compressed-1",Helvetica, Arial, sans-serif;
 	font-weight: normal;
 	line-height: 110%;
-	background-image: url('https://dl.dropboxusercontent.com/u/25741860/cas_soph/images/casual_sophistication.svg'); no-r
+	background-image: url('https://dl.dropboxusercontent.com/u/25741860/cas_soph/images/casual_sophistication.svg'); 
 }
 .header .title {
 	margin: 8px 30px 0 0;
@@ -122,7 +129,7 @@ blockquote {
 }
 .header .slide_downs {
 	padding: 25px 0;
-	border-top: 1px solid rgba(255,255,255,0.25);
+	border-top: 1px solid rgba(0,0,20, 1);
 	width: 100%;
 	float: left;
 	font-size: 12px;
@@ -144,6 +151,11 @@ blockquote {
 .post {
 	float: left;
 	position: relative;
+	-webkit-transition: padding .25s ease !important;
+	-moz-transition: padding .25s ease !important;
+	-ms-transition: padding .25s ease !important;
+	-o-transition: padding .25s ease !important;
+	transition: padding .5s ease !important;
 	{block:IndexPage}
 	margin: 5px;
 	{block:IfLargePosts}
@@ -155,21 +167,24 @@ blockquote {
 	{/block:IndexPage}
 	{block:PermalinkPage}
 	margin: 10px;
-	width: 500px
+	width: 500px;
+	padding-top: 30px;
 	{/block:PermalinkPage}
 	
 }
 
 .post:hover {
 	border-radius: 3px;
+	padding-top: 30px;
 	-moz-box-shadow:    1px 1px 3px 1px #ccc;
 	-webkit-box-shadow: 1px 1px 3px 1px #ccc;
 	box-shadow:         1px 1px 3px 1px #ccc;
-	-webkit-transition: all 2s ease;
-	-moz-transition: all 2s ease;
-	-o-transition: all 2s ease;
-	transition: all 2s ease;
-	
+	-webkit-transition: all .5s ease !important;
+	-moz-transition: all .5s ease !important;
+	-ms-transition: all .5s ease !important;
+	-o-transition: all .5s ease !important;
+	transition: all .5s ease !important;
+	z-index: 1;
 }
 
 .note_box {
@@ -209,41 +224,90 @@ blockquote {
 	margin: 2px 35px;
 }
 .post .info_bar {
+	background-color: rgba(38,30,53, 1);
 	width: 100%;
+	height: 30px;
 	position: absolute;
-	bottom: 5px;
-	right: 5px;
+	top: 0px;
+	right: 0px;
 	text-align: right;
 	opacity: 0;
-	-webkit-transition: all 0.1s ease;
-	-moz-transition: all 0.1s ease;
-	-o-transition: all 0.1s ease;
-	transition: all 0.1s ease;
+	color: white;
+	border-radius: 5px 5px 0px 0px;
+	-webkit-transition: all 0.25s ease;
+	-moz-transition: all 0.25s ease;
+	-o-transition: all 0.25s ease;
+	transition: all 0.25s ease;
 	{block:PermalinkPage}
-	display: none;
+	opacity: 1;
 	{/block:PermalinkPage}
+}
+
+.post .info_bar .social_links li {
+	background-color: none;
+}
+
+.post .info_bar ul {
+	list-style: none;
+}
+
+.post .info_bar ul li {
+	display: block;
+	color: white;
+	text-decoration: none;
+	background-color: rgba(38,30,53, .8);
+	padding: 3px 5px 3px 5px;
+	margin: 0 auto;
+	text-align: center;
+	float: left;
+}
+
+.post .info_bar ul li:hover {
+	background-color: rgba(38,30,53, 1);
+	-webkit-box-shadow: inset 0px 2px 10px 0px rgba(0, 0, 0, 1);
+	box-shadow: inset 0px 2px 10px 0px rgba(0, 0, 0, 1);
+}
+
+
+.post .info_bar ul li a {
+	text-decoration: none;
+
+}
+
+.post .info_bar ul li:not(:last-child) {
+	border-right: 1px solid rgba(38,30,53, .7);
+
+}
+.post .info_bar ul li:first-child {
+	border-radius: 5px 0px 0px 5px;
+}
+
+.post .info_bar ul li:last-child {
+	border-radius: 0px 5px 5px 0px;
+	margin-right: 5px;
 }
 .post:hover .info_bar {
 	opacity: 1;
+
 }
-.post .info_bar a {
-	text-decoration: none;
-}
+
 .post .info_bar img {
 	margin: 0 3px -6px 0;
 }
 .post .info_bar .notecount {
-	background: rgba(0,0,0,0.5);
-	border: rgba(0,0,0,0.2) solid 1px;
+	background-color: rgba(38,30,53, .8);
 	text-shadow: 0px 1px 1px rgba(0,0,0,0.5);
 	filter: dropshadow(color=rgba(0,0,0,0.5), offx=0, offy=1);
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	padding: 2px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding: 5px;
 	font-size: 12px;
 	font-weight: bold;
 	position: relative;
+	text-align: center;
+	text-decoration: none;
+
 }
 .post .info_bar .notecount span {
 	color: #FFF;
@@ -330,5 +394,27 @@ body{background:url({image:Background}) {color:Background} {block:IfFixedBackgro
 	text-transform: uppercase;
 }
 {CustomCSS}
-.spotify_audio_player {height:380px !important;}
-</style>
+.spotify_audio_player {height:380px !important;
+}
+
+.my-like {
+	font-family: FontAwesome;
+	text-decoration: none;
+	cursor:pointer;
+    display:inline;
+    margin: 0 auto;
+	text-align: center;
+}
+.my-liked, .my-like:hover {
+	font-family: FontAwesome;
+    text-decoration: none;
+	cursor:pointer;
+    display:inline;
+    margin: 0 auto;
+	text-align: center;
+}
+
+.my-liked {
+	 color: rgba(237, 74, 75, 1);
+
+}
